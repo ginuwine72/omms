@@ -11,11 +11,12 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li> <a href="<?=site_url('order/index');?>">รายการแจ้งซ่อม</a> </li>
+        <li class="<?=($parent === 'order') ? 'active' : '';?>"> <a href="<?=site_url('order/index');?>">รายการแจ้งซ่อม</a> </li>
+        <li class="<?=($parent === 'device') ? 'active' : '';?>"> <a href="<?=site_url('device/index');?>">รายการอุปกรณ์</a> </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <?php if ( ! $this->ion_auth->logged_in()) : ?>
-          <li> <a href="<?=site_url('auth/login');?>">เข้าสู่ระบบ</a> </li>
+          <li class="<?=($parent === 'auth') ? 'active' : '';?>"> <a href="<?=site_url('auth/login');?>">เข้าสู่ระบบ</a> </li>
         <?php else: ?>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle <?=($parent === 'account') ? 'active' : '';?>" data-toggle="dropdown">บัญชีของคุณ <b class="caret"></b></a>
@@ -24,9 +25,7 @@
               <li class="divider"></li>
               <?php if ($this->ion_auth->in_group('admin')) : ?>
                 <li> <a href="<?=site_url('admin/order');?>">เข้าระบบผู้ดูแล</a> </li>
-                <li class="divider"></li>
-              <?php else: ?>
-                <li> <a href="<?=site_url('account/order');?>">ประวัติการแจ้งซ่อม</a> </li>
+                <li> <a href="<?=site_url('admin/asset');?>">อัลบั้มไฟล์เอกสาร</a> </li>
                 <li class="divider"></li>
               <?php endif; ?>
               <li> <a href="<?=site_url('auth/logout');?>">ออกจากระบบ</a> </li>

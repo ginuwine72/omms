@@ -17,13 +17,11 @@ if ( ! function_exists('any_in_array'))
     $needle = is_array($needle) ? $needle : array($needle);
     $haystack = (array)$haystack;
 
-    foreach ($needle as $item)
-    {
-      if (in_array($item, $haystack))
-      {
+    foreach ($needle as $item) :
+      if (in_array($item, $haystack)) :
         return TRUE;
-      }
-    }
+      endif;
+    endforeach;
     return FALSE;
   }
 }

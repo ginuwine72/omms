@@ -14,11 +14,11 @@ class Order extends Admin_Controller {
   function index()
   {
     $this->data['orders'] = $this->order->search();
-    $this->data['body'] = $this->load->view('order/list',$this->data,TRUE);
+    $this->data['body'] = $this->load->view('order/index',$this->data,TRUE);
     $this->load->view('_layouts/boxed', $this->data);
   }
 
-  function view($id='')
+  function approve($id='')
   {
     $this->form_validation->set_rules('status','สถานะการตอบกลับ','required');
     if ($this->form_validation->run() === FALSE) :
@@ -37,7 +37,7 @@ class Order extends Admin_Controller {
 
     $this->data['order'] = $this->order->search_id($id);
     $this->data['order']['admin_id'] = $this->ion_auth->user($this->data['order']['admin_id'])->row_array();
-    $this->data['body'] = $this->load->view('order/view',$this->data,TRUE);
+    $this->data['body'] = $this->load->view('order/approve',$this->data,TRUE);
     $this->load->view('_layouts/boxed', $this->data);
   }
 

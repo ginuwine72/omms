@@ -1,7 +1,5 @@
 <div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">รายการแจ้งซ่อมที่ #<?=$order['id'];?></h3>
-  </div>
+  <div class="panel-heading"> <h3 class="panel-title">รายการแจ้งซ่อมที่ #<?=$order['id'];?></h3> </div>
   <div class="panel-body"> </div>
   <?=form_open(uri_string(),array('class'=>'form-horizontal'));?>
   <?=form_hidden('id',$order['id']);?>

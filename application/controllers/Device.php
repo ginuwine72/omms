@@ -1,27 +1,33 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Order extends Public_Controller {
+class Device extends Public_Controller {
 
   public function __construct()
   {
     parent::__construct();
     $this->data['message'] = (validation_errors() ? validation_errors() : $this->session->flashdata('message'));
-    $this->load->model('Order_model','order');
+    $this->load->model('Device_model','device');
+    $this->load->model('Asset_model','asset');
 
-    $this->data['css'] = array(link_tag('assets/css/wysihtml5.min.css'));
-    $this->data['js'] = array(script_tag('assets/js/wysihtml5.all.min.js'));
-
-    $this->data['page_header'] = 'หน้ารายการแจ้งซ่อม';
+    $this->data['page_header'] = 'หน้ารายการอุปกรณ์';
     $this->data['page_header_small'] = 'แสดงข้อมูลรายการทั้งหมด';
-    $this->data['parent'] = 'order';
+    $this->data['parent'] = 'device';
     $this->data['header'] = array($this->load->view('_partials/header',$this->data,TRUE));
     $this->data['navbar'] = $this->load->view('_partials/navbar',$this->data,TRUE);
   }
 
   function index()
   {
-    $this->data['orders'] = $this->order->search();
-    $this->data['body'] = $this->load->view('order/list',$this->data,TRUE);
+    $this->data['devices'] = $this->device->search();
+    $this->data['body'] = $this->load->view('device/list',$this->data,TRUE);
+    $this->load->view('_layouts/boxed',$this->data);
+  }
+
+  function view($id='')
+  {
+    $this->data['device'] = $this->device->search_id($id);
+    $this->data['asset'] = $this->asset->find_attachment(unserialize($this->data['device']['attachments']));
+    $this->data['body'] = $this->load->view('device/view',$this->data,TRUE);
     $this->load->view('_layouts/boxed',$this->data);
   }
 

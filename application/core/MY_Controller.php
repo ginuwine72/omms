@@ -23,7 +23,6 @@ class MY_Controller extends CI_Controller {
       'leftbar' => '',
       'rightbar' => ''
     );
-    $this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
   }
 
 }

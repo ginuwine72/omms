@@ -11,7 +11,7 @@ class Profile extends Private_Controller {
 
   function index()
   {
-    $this->form_validation->set_rules('','','');
+    $this->form_validation->set_rules('title','คำนำหน้าชื่อ','required');
     if ($this->form_validation->run() === FALSE) :
     else:
       $data = $this->input->post();
@@ -32,7 +32,7 @@ class Profile extends Private_Controller {
 
   function edit()
   {
-    $this->form_validation->set_rules('','','');
+    $this->form_validation->set_rules('email','อีเมล์','required');
     if ($this->form_validation->run() === FALSE) :
     else:
       $data = $this->input->post();
