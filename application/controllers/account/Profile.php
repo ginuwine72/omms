@@ -5,7 +5,11 @@ class Profile extends Private_Controller {
   public function __construct()
   {
     parent::__construct();
-    $this->data['message'] = (validation_errors() ? validation_errors() : $this->session->flashdata('message'));
+    $this->data['parent'] = 'device';
+    $this->data['page_header'] = 'หน้าโปรไฟล์';
+    $this->data['page_header_small'] = 'อัพเดทข้อมูลส่วนตัวของผู้ใช้';
+    $this->data['header'] = $this->load->view('_partials/header',$this->data,TRUE);
+    $this->data['navbar'] = $this->load->view('_partials/menubar',$this->data,TRUE);
     $this->data['user'] = $this->ion_auth->user()->row_array();
   }
 

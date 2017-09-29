@@ -8,7 +8,7 @@
   <title><?=$page_title;?></title>
 
   <?=link_tag('assets/css/bootstrap.min.css');?>
-  <?=link_tag('assets/css/bootstrap.theme.min.css');?>
+  <?=link_tag('assets/css/bootstrap.yeti.min.css');?>
   <?=link_tag('assets/css/font-awesome.min.css');?>
   <?=result_in_array($css);?>
 
@@ -19,7 +19,7 @@
   <?=script_tag('assets/js/jquery.min.js');?>
   <?=script_tag('assets/js/bootstrap.min.js');?>
 </head>
-<body style="padding-top:5em;">
+<body class="<?=$body_class;?>" style="padding-top:5em;">
 
   <div class="container">
     <div class="row">

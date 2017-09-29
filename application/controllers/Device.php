@@ -1,11 +1,10 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Device extends Public_Controller {
+class Device extends MY_Controller {
 
   public function __construct()
   {
     parent::__construct();
-    $this->data['message'] = (validation_errors() ? validation_errors() : $this->session->flashdata('message'));
     $this->load->model('Device_model','device');
     $this->load->model('Asset_model','asset');
 

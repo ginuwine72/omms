@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Order extends Admin_Controller {
+class Order extends Technician_Controller {
 
   public function __construct()
   {
@@ -17,16 +17,16 @@ class Order extends Admin_Controller {
     $this->load->view('_layouts/boxed', $this->data);
   }
 
-  function reply($id='')
+  function approve($id='')
   {
-    $this->form_validation->set_rules('admin_status','สถานะการตอบกลับ','required');
-    $this->form_validation->set_rules('admin_remark','หมายเหตุการตอบกลับ','required');
+    $this->form_validation->set_rules('technician_status','สถานะการตอบกลับ','required');
+    $this->form_validation->set_rules('technician_remark','หมายเหตุการตอบกลับ','required');
     if ($this->form_validation->run() === FALSE) :
       $this->session->set_flashdata('warning',validation_errors());
     else:
       $data = $this->input->post();
-      $data['admin_id'] = $this->session->user_id;
-      $data['admin_update'] = time();
+      $data['technician_id'] = $this->session->user_id;
+      $data['technician_update'] = time();
       if($this->order->save($data)) :
         $this->session->set_flashdata('message','บันทึกข้อมูลเสร็จสิ้น');
       endif;
@@ -38,13 +38,6 @@ class Order extends Admin_Controller {
     $this->data['order']['technician_id'] = $this->ion_auth->user($this->data['order']['technician_id'])->row_array();
     $this->data['body'] = $this->load->view('order/approve',$this->data,TRUE);
     $this->load->view('_layouts/boxed', $this->data);
-  }
-
-  function delete($id='')
-  {
-    $this->order->remove($id);
-
-    redirect('admin/order');
   }
 
 }

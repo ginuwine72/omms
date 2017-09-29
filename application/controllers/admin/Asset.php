@@ -6,12 +6,6 @@ class Asset extends Admin_Controller {
   {
     parent::__construct();
     $this->load->model('Asset_model','asset');
-
-    $this->data['page_header'] = 'หน้ารายการเอกสาร';
-    $this->data['page_header_small'] = 'แสดงข้อมูลรายการทั้งหมด';
-    $this->data['parent'] = 'asset';
-
-    $this->data['navbar'] = $this->load->view('_partials/menubar',$this->data,TRUE);
   }
 
   function index()

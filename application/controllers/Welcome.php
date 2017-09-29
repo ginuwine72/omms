@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends Public_Controller {
+class Welcome extends MY_Controller {
 
 	public function __construct()
 	{
@@ -12,6 +12,7 @@ class Welcome extends Public_Controller {
 		$this->data['page_header'] = 'หน้าหลัก';
 		$this->data['page_header_small'] = 'ข้อมูลทั่วไป/เกี่ยวกับการใช้งาน';
 		$this->data['header'] = array(
+			$this->load->view('_partials/carousel',NULL,TRUE),
 			$this->load->view('_partials/header',$this->data,TRUE),
 			$this->load->view('_partials/jumbotron',NULL,TRUE)
 		);

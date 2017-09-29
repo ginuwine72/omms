@@ -1,11 +1,10 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Order extends Public_Controller {
+class Order extends MY_Controller {
 
   public function __construct()
   {
     parent::__construct();
-    $this->data['message'] = (validation_errors() ? validation_errors() : $this->session->flashdata('message'));
     $this->load->model('Order_model','order');
 
     $this->data['css'] = array(link_tag('assets/css/wysihtml5.min.css'));

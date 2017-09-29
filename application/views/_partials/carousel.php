@@ -1,39 +1,34 @@
-<!-- Header Carousel -->
-<header id="myCarousel" class="carousel slide">
-  <!-- Indicators -->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
   </ol>
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
+  <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
+      <img src="https://placehold.it/1200x300" alt="...">
       <div class="carousel-caption">
-        <h2>Caption 1</h2>
       </div>
     </div>
     <div class="item">
-      <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
+      <img src="https://placehold.it/1200x300" alt="...">
       <div class="carousel-caption">
-        <h2>Caption 2</h2>
       </div>
     </div>
     <div class="item">
-      <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
+      <img src="https://placehold.it/1200x300" alt="...">
       <div class="carousel-caption">
-        <h2>Caption 3</h2>
       </div>
     </div>
   </div>
 
-  <!-- Controls -->
-  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-    <span class="icon-prev"></span>
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
   </a>
-  <a class="right carousel-control" href="#myCarousel" data-slide="next">
-    <span class="icon-next"></span>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
   </a>
-</header>
+</div>

@@ -20,19 +20,10 @@ class MY_Controller extends CI_Controller {
       'footer' => '',
       'navbar' => '',
       'body' => '',
+      'body_class' => '',
       'leftbar' => '',
       'rightbar' => ''
     );
-  }
-
-}
-
-class Public_Controller extends MY_Controller {
-
-  public function __construct()
-  {
-    parent::__construct();
-    // if ($this->ion_auth->in_group('member'))
   }
 
 }
@@ -48,13 +39,34 @@ class Private_Controller extends MY_Controller {
 
 }
 
-class Admin_Controller extends MY_Controller {
+class Admin_Controller extends Private_Controller {
 
   public function __construct()
   {
     parent::__construct();
-    if ( ! $this->ion_auth->is_admin())
+    if ( ! $this->ion_auth->in_group('admin'))
       redirect('auth/logout');
+
+    $this->data['body_class'] = 'bg-success';
+    $this->data['page_header'] = 'ส่วนของผู้ดูแลระบบ';
+    $this->data['page_header_small'] = 'ทำหน้าที่จัดการข้อมูลภายในระบบ';
+    $this->data['header'] = array($this->load->view('_partials/header',$this->data,TRUE));
+  }
+
+}
+
+class Technician_Controller extends Private_Controller {
+
+  public function __construct()
+  {
+    parent::__construct();
+    if ( ! $this->ion_auth->in_group('technician'))
+      redirect('auth/logout');
+
+    $this->data['body_class'] = 'bg-info';
+    $this->data['page_header'] = 'ส่วนของช่างเทคนิคซ่อมบำรุง';
+    $this->data['page_header_small'] = 'ทำหน้าที่จัดการตรวจสอบรายการแจ้งซ่อม';
+    $this->data['header'] = $this->load->view('_partials/header',$this->data,TRUE);
   }
 
 }

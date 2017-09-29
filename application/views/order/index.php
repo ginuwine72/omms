@@ -23,9 +23,11 @@
           <td><?=($value['date_update']) ? date('d-m-Y H:i',$value['date_update']) : 'N/A';?></td>
           <td><?=$value['status'];?></td>
           <td>
-            <?php if ($this->ion_auth->is_admin()) : ?>
-              <?=anchor('admin/order/approve/'.$value['id'],'ดู',array('class'=>'label label-info'));?>
-              <?=anchor('admin/order/delete/'.$value['id'],'ลบ',array('class'=>'label label-warning'));?>
+            <?php if ($this->ion_auth->in_group('admin')) : ?>
+              <?=anchor('admin/order/reply/'.$value['id'],'ดู',array('class'=>'label label-info'));?>
+              <?=anchor('admin/order/delete/'.$value['id'],'ลบ',array('class'=>'label label-warning','onclick'=>"return confirm('ยืนยันการลบข้อมูล');"));?>
+            <?php elseif ($this->ion_auth->in_group('technician')) : ?>
+              <?=anchor('technician/order/approve/'.$value['id'],'ดู',array('class'=>'label label-info'));?>
             <?php endif; ?>
           </td>
         </tr>

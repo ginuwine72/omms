@@ -5,6 +5,7 @@ class User extends Admin_Controller {
   public function __construct()
   {
     parent::__construct();
+    $this->data['parent'] = 'user';
     $this->data['navbar'] = $this->load->view('_partials/menubar',$this->data,TRUE);
   }
 

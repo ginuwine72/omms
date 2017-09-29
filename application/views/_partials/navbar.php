@@ -23,8 +23,12 @@
             <ul class="dropdown-menu">
               <li> <a href="<?=site_url('account/profile');?>">ข้อมูลส่วนตัว</a> </li>
               <li class="divider"></li>
+              <?php if ($this->ion_auth->in_group('technician')): ?>
+                <li> <a href="<?=site_url('technician/order');?>">ระบบช่างเทคนิค</a> </li>
+                <li class="divider"></li>
+              <?php endif; ?>
               <?php if ($this->ion_auth->in_group('admin')) : ?>
-                <li> <a href="<?=site_url('admin/order');?>">เข้าระบบผู้ดูแล</a> </li>
+                <li> <a href="<?=site_url('admin/device');?>">ระบบแอดมิน</a> </li>
                 <li> <a href="<?=site_url('admin/asset');?>">อัลบั้มไฟล์เอกสาร</a> </li>
                 <li class="divider"></li>
               <?php endif; ?>

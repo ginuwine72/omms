@@ -19,5 +19,5 @@
     </div>
   </div>
   <?=form_close();?>
-  <div class="panel-footer"> <?=$message;?> </div>
+  <div class="panel-footer"> </div>
 </div>

@@ -10,9 +10,6 @@ class Device extends Admin_Controller {
 
     $this->data['css'] = array(link_tag('assets/css/wysihtml5.min.css'));
     $this->data['js'] = array(script_tag('assets/js/wysihtml5.all.min.js'));
-
-    $this->data['page_header'] = 'หน้ารายการอุปกรณ์';
-    $this->data['page_header_small'] = 'แสดงข้อมูลรายการทั้งหมด';
     $this->data['parent'] = 'device';
     $this->data['navbar'] = $this->load->view('_partials/menubar',$this->data,TRUE);
   }

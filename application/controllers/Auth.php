@@ -1,11 +1,10 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Auth extends Public_Controller {
+class Auth extends MY_Controller {
 
 	public function __construct()
 	{
 		parent::__construct();
-		$this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
 	}
 
 	public function index()
@@ -37,7 +36,6 @@ class Auth extends Public_Controller {
 		}
 		else
 		{
-			$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
 			$this->data['identity'] = array('name' => 'identity',
 				'id'    => 'identity',
 				'type'  => 'text',
@@ -49,7 +47,7 @@ class Auth extends Public_Controller {
 			);
 			$this->data['navbar'] = $this->load->view('_partials/navbar',$this->data,TRUE);
 			$this->data['body'] = $this->load->view('auth/login',$this->data,TRUE);
-			$this->load->view('_layouts/fullwidth', $this->data);
+			$this->load->view('_layouts/boxed', $this->data);
 		}
 	}
 
@@ -90,7 +88,7 @@ class Auth extends Public_Controller {
 			$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
 			$this->data['navbar'] = $this->load->view('_partials/navbar',$this->data,TRUE);
 			$this->data['body'] = $this->load->view('auth/forgot_password', $this->data, TRUE);
-			$this->load->view('_layouts/fullwidth', $this->data);
+			$this->load->view('_layouts/boxed', $this->data);
 		}
 		else
 		{
@@ -159,7 +157,7 @@ class Auth extends Public_Controller {
 				$this->data['csrf'] = $this->_get_csrf_nonce();
 				$this->data['code'] = $code;
 				$this->data['body'] = $this->load->view('auth/reset_password', $this->data, TRUE);
-				$this->load->view('_layouts/fullwidth', $this->data);
+				$this->load->view('_layouts/boxed', $this->data);
 			}
 			else
 			{
@@ -252,7 +250,7 @@ class Auth extends Public_Controller {
 		{
 			$this->data['navbar'] = $this->load->view('_partials/navbar',$this->data,TRUE);
 			$this->data['body'] = $this->load->view('auth/create_user', $this->data, TRUE);
-			$this->load->view('_layouts/fullwidth', $this->data);
+			$this->load->view('_layouts/boxed', $this->data);
 		}
 	}
 

@@ -4,7 +4,6 @@
       <div class="panel panel-success">
         <div class="panel-heading"> <h3 class="panel-title"> <?=lang('create_user_heading');?> <small><?=lang('create_user_subheading');?></small> </h3> </div>
         <div class="panel-body">
-          <div id="infoMessage"><?=$message;?></div>
           <?=form_open("auth/create_user",array('class'=>'form-horizontal','autocomplete'=>'off'));?>
           <?php if ($identity_column!=='email') : ?>
             <div class="form-group">
