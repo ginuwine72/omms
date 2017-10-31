@@ -45,7 +45,7 @@
         <div class="col-md-9"> <?=form_input(array('name'=>'','class'=>'form-control','disabled'=>TRUE),set_value('',($order['admin_update']) ? date('d-m-Y H:i',$order['admin_update']) : 'N/A'));?> </div>
       </div>
       <div class="form-group"> <label for="" class="control-label col-md-3">สถานะตอบกลับ</label>
-        <div class="col-md-9"> <?=form_dropdown(array('name'=>'admin_status','class'=>'form-control'),array(''=>'เลือกรายการ','รอดำเนินการ'=>'รอดำเนินการ','อยู่ระหว่างการซ่อม'=>'อยู่ระหว่างการซ่อม','ไม่สามารถซ่อมได้'=>'ไม่สามารถซ่อมได้'),set_value('admin_status',$order['admin_status']));?> </div>
+        <div class="col-md-9"> <?=form_dropdown(array('name'=>'technician_status','class'=>'form-control'),array(''=>'เลือกรายการ','ง่ายมาก'=>'ง่ายมาก','ปานกลาง'=>'ปานกลาง','ยากมาก'=>'ยากมาก','ไม่สามารถซ่อมได้'=>'ไม่สามารถซ่อมได้'),set_value('technician_status',$order['technician_status']));?> </div>
       </div>
       <div class="form-group"> <label for="" class="control-label col-md-3">หมายเหตุการตอบกลับ</label>
         <div class="col-md-9"> <?=form_textarea(array('name'=>'admin_remark','class'=>'form-control','value'=>$order['admin_remark']));?> </div>

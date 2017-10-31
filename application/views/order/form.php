@@ -1,7 +1,4 @@
-<div class="col-md-12">
-  <?=anchor('order','ย้อนกลับ',array('class'=>'btn btn-link'));?>
-  <hr>
-</div>
+<div class="col-md-12"> <?=anchor('#','ย้อนกลับ',array('class'=>'btn btn-link','onclick'=>'window.history.back(); return false;'));?> <hr> </div>
 <div class="col-md-12">
   <div class="panel panel-default">
     <div class="panel-body">

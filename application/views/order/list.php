@@ -1,7 +1,4 @@
-<div class="col-md-12">
-  <?=anchor('order/form','แจ้งรายการใหม่',array('class'=>'btn btn-link'));?>
-  <hr>
-</div>
+<div class="col-md-12"> <?=anchor('order/form','แจ้งรายการใหม่',array('class'=>'btn btn-link'));?> <hr> </div>
 <div class="col-md-12">
   <table class="table table-striped table-hover">
     <thead>

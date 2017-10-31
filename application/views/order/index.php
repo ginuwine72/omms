@@ -1,7 +1,5 @@
 <div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">รายการแจ้งซ่อมทั้งหมด <?=count($orders);?> รายการ</h3>
-  </div>
+  <div class="panel-heading"> <h3 class="panel-title">รายการแจ้งซ่อมทั้งหมด <?=count($orders);?> รายการ</h3> </div>
   <div class="panel-body"> </div>
   <table class="table table-bordered table-hover">
     <thead>

@@ -13,8 +13,7 @@ class Welcome extends MY_Controller {
 		$this->data['page_header_small'] = 'ข้อมูลทั่วไป/เกี่ยวกับการใช้งาน';
 		$this->data['header'] = array(
 			$this->load->view('_partials/carousel',NULL,TRUE),
-			$this->load->view('_partials/header',$this->data,TRUE),
-			$this->load->view('_partials/jumbotron',NULL,TRUE)
+			$this->load->view('_partials/header',$this->data,TRUE)
 		);
 		$this->data['parent'] = 'home';
 		$this->data['navbar'] = $this->load->view('_partials/navbar',$this->data,TRUE);

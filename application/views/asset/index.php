@@ -3,7 +3,7 @@
     <?=form_open('admin/asset/upload/',array('class'=>'dropzone','id'=>'my-upload','style'=>'background:#f5f5f5;'));?>
   </div>
   <div class="col-md-2">
-    <?=anchor('#','ย้อนกลับ',array('class'=>'btn btn-link btn-block','onclick'=>'window.history.back()'));?>
+    <?=anchor('#','ย้อนกลับ',array('class'=>'btn btn-link btn-block','onclick'=>'window.history.back(); return false;'));?>
     <?=form_submit('#','อัพโหลด',array('class'=>'btn btn-info btn-block','id'=>'my-submit')).form_close();?>
   </div>
 </div>

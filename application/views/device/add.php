@@ -1,4 +1,4 @@
-<div class="col-md-12"> <?=anchor('#','ย้อนกลับ',array('class'=>'btn btn-link','onclick'=>'window.history.back()'));?> <hr> </div>
+<div class="col-md-12"> <?=anchor('#','ย้อนกลับ',array('class'=>'btn btn-link','onclick'=>'window.history.back(); return false;'));?> <hr> </div>
 <?=form_open_multipart(uri_string(),array('class'=>'form-horizontal'));?>
 <div class="col-md-12">
   <div class="panel panel-default">
@@ -11,12 +11,12 @@
       <div class="form-group">
         <?=form_label('ชนิดอุปกรณ์','',array('class'=>'control-label col-md-3'));?>
         <?php $tp = array(''=>'เลือกรายการ'); ?>
-        <div class="col-md-9"> <?=form_dropdown(array('name'=>'type','class'=>'form-control'),$tp,set_value('type'));?> </div>
+        <div class="col-md-9"> <?=form_input(array('name'=>'type','class'=>'form-control'),set_value('type'));?> </div>
       </div>
       <div class="form-group">
         <?=form_label('ประเภทอุปกรณ์','',array('class'=>'control-label col-md-3'));?>
         <?php $ct = array(''=>'เลือกรายการ'); ?>
-        <div class="col-md-9"> <?=form_dropdown(array('name'=>'category','class'=>'form-control'),$ct,set_value('category'));?> </div>
+        <div class="col-md-9"> <?=form_input(array('name'=>'category','class'=>'form-control'),set_value('category'));?> </div>
       </div>
       <div class="form-group">
         <?=form_label('วันที่บันทึก','',array('class'=>'control-label col-md-3'));?>
