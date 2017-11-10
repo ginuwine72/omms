@@ -7,6 +7,7 @@
         <th>หัวข้อเรื่อง</th>
         <th>วันที่แจ้ง</th>
         <th>วันที่อัพเดท</th>
+        <th>การประเมิน</th>
         <th>สถานะ</th>
       </tr>
     </thead>
@@ -17,6 +18,7 @@
           <td><?=$value['title'];?></td>
           <td><?=($value['date_create']) ? date('d-m-Y H:i',$value['date_create']) : 'N/A';?></td>
           <td><?=($value['date_update']) ? date('d-m-Y H:i',$value['date_update']) : 'N/A';?></td>
+          <td><?=$value['admin_status'];?></td>
           <td><?=$value['status'];?></td>
         </tr>
       <?php endforeach; ?>

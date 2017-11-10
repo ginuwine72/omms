@@ -7,24 +7,24 @@
 
   <div class="carousel-inner" role="listbox">
     <div class="item active">
+      <img src="<?=base_url('assets/images/0.png');?>" class="img-responsive" style="height:300px;">
+      <div class="carousel-caption"> </div>
+    </div>
+    <div class="item">
       <img src="<?=base_url('assets/images/4.png');?>" class="img-responsive" style="height:300px;">
-      <div class="carousel-caption">
-      </div>
+      <div class="carousel-caption"> </div>
     </div>
     <div class="item">
       <img src="<?=base_url('assets/images/3.png');?>" class="img-responsive" style="height:300px;">
-      <div class="carousel-caption">
-      </div>
+      <div class="carousel-caption"> </div>
     </div>
     <div class="item">
       <img src="<?=base_url('assets/images/2.png');?>" class="img-responsive" style="height:300px;">
-      <div class="carousel-caption">
-      </div>
+      <div class="carousel-caption"> </div>
     </div>
     <div class="item">
       <img src="<?=base_url('assets/images/1.png');?>" class="img-responsive" style="height:300px;">
-      <div class="carousel-caption">
-      </div>
+      <div class="carousel-caption"> </div>
     </div>
   </div>
 

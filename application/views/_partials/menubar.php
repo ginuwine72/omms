@@ -30,7 +30,7 @@
               <li class="divider"></li>
             <?php endif; ?>
             <?php if ($this->ion_auth->in_group('admin')) : ?>
-              <li> <a href="<?=site_url('admin/device');?>">ระบบแอดมิน</a> </li>
+              <li> <a href="<?=site_url('admin/order');?>">ระบบแอดมิน</a> </li>
               <li> <a href="<?=site_url('admin/asset');?>">อัลบั้มไฟล์เอกสาร</a> </li>
               <li> <a href="<?=site_url();?>">กลับหน้าหลัก</a> </li>
               <li class="divider"></li>

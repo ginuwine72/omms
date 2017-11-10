@@ -35,8 +35,21 @@
       <div class="form-group"> <label for="" class="control-label col-md-3">หมายเหตการตอบกลับุ</label>
         <div class="col-md-9"> <?=form_textarea(array('name'=>'technician_remark','class'=>'form-control','value'=>$order['technician_remark']));?> </div>
       </div>
-    <?php endif;?>
+    <?php endif; ?>
     <?php if ($this->ion_auth->in_group('admin')) : ?>
+      <hr>
+      <div class="form-group"> <label for="" class="control-label col-md-3">ช่างผู้ตรวจสอบ</label>
+        <div class="col-md-9"> <?=form_input(array('name'=>'','class'=>'form-control','disabled'=>TRUE),set_value('',($order['technician_id']['username']) ? $order['technician_id']['username'] : 'N/A'));?> </div>
+      </div>
+      <div class="form-group"> <label for="" class="control-label col-md-3">วันที่อัพเดท</label>
+        <div class="col-md-9"> <?=form_input(array('name'=>'technician_update','class'=>'form-control','disabled'=>TRUE),set_value('',($order['technician_update']) ? date('d-m-Y H:i',$order['technician_update']) : 'N/A'));?> </div>
+      </div>
+      <div class="form-group"> <label for="" class="control-label col-md-3">สถานะตอบกลับ</label>
+        <div class="col-md-9"> <?=form_dropdown(array('name'=>'technician_status','class'=>'form-control','disabled'=>TRUE),array(''=>'เลือกรายการ','ง่ายมาก'=>'ง่ายมาก','ปานกลาง'=>'ปานกลาง','ยากมาก'=>'ยากมาก','ไม่สามารถซ่อมได้'=>'ไม่สามารถซ่อมได้'),set_value('technician_status',$order['technician_status']));?> </div>
+      </div>
+      <div class="form-group"> <label for="" class="control-label col-md-3">หมายเหตการตอบกลับุ</label>
+        <div class="col-md-9"> <?=form_textarea(array('name'=>'technician_remark','class'=>'form-control','value'=>$order['technician_remark'],'disabled'=>TRUE));?> </div>
+      </div>
       <hr>
       <div class="form-group"> <label for="" class="control-label col-md-3">แอดมินผู้รับเรื่อง</label>
         <div class="col-md-9"> <?=form_input(array('name'=>'','class'=>'form-control','disabled'=>TRUE),set_value('',($order['admin_id']['username']) ? $order['admin_id']['username'] : 'N/A'));?> </div>
@@ -45,7 +58,7 @@
         <div class="col-md-9"> <?=form_input(array('name'=>'','class'=>'form-control','disabled'=>TRUE),set_value('',($order['admin_update']) ? date('d-m-Y H:i',$order['admin_update']) : 'N/A'));?> </div>
       </div>
       <div class="form-group"> <label for="" class="control-label col-md-3">สถานะตอบกลับ</label>
-        <div class="col-md-9"> <?=form_dropdown(array('name'=>'technician_status','class'=>'form-control'),array(''=>'เลือกรายการ','ง่ายมาก'=>'ง่ายมาก','ปานกลาง'=>'ปานกลาง','ยากมาก'=>'ยากมาก','ไม่สามารถซ่อมได้'=>'ไม่สามารถซ่อมได้'),set_value('technician_status',$order['technician_status']));?> </div>
+        <div class="col-md-9"> <?=form_dropdown(array('name'=>'admin_status','class'=>'form-control'),array(''=>'เลือกรายการ','ง่ายมาก'=>'ง่ายมาก','ปานกลาง'=>'ปานกลาง','ยากมาก'=>'ยากมาก','ไม่สามารถซ่อมได้'=>'ไม่สามารถซ่อมได้'),set_value('admin_status',$order['admin_status']));?> </div>
       </div>
       <div class="form-group"> <label for="" class="control-label col-md-3">หมายเหตุการตอบกลับ</label>
         <div class="col-md-9"> <?=form_textarea(array('name'=>'admin_remark','class'=>'form-control','value'=>$order['admin_remark']));?> </div>
