@@ -15,9 +15,13 @@
     <div class="col-md-12">
       <?php foreach ($assets as $value) : ?>
         <div class="col-sm-1 col-md-2 col-lg-3">
-          <a href="../uploads/attachments/<?=$value['file_name'];?>" target="_blank" class="thumbnail img-responsive">
+          <div class="thumbnail">
             <img src="../uploads/attachments/<?=$value['file_name'];?>" class="" style="min-height:150px;height:150px;width:100%;">
-          </a>
+            <div class="caption">
+              <a href="../uploads/attachments/<?=$value['file_name'];?>" target="_blank" class="label label-info">ดู</a>
+              <a href="<?=site_url('admin/asset/delete/'.$value['id']);?>" class="label label-warning" onclick="return confirm('ยืนยันการลบไฟล์นี้?');">ลบ</a>
+            </div>
+          </div>
         </div>
       <?php endforeach; ?>
     </div>

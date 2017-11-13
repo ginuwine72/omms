@@ -23,12 +23,6 @@ class Asset extends Admin_Controller {
     $this->load->view('_layouts/boxed',$this->data);
   }
 
-  function test()
-  {
-    $this->data['body'] = $this->load->view('asset/add',$this->data,TRUE);
-    $this->load->view('_layouts/boxed',$this->data);
-  }
-
   function upload()
   {
     if ($_FILES['file']['error'] === UPLOAD_ERR_OK) :
@@ -56,6 +50,20 @@ class Asset extends Admin_Controller {
       endif;
     endif;
 
+    redirect('admin/asset');
+  }
+
+  function delete($id='')
+  {
+    if ( ! intval($id) > 0)
+      show_error('ไม่สามารถทำการลบไฟล์ได้');
+
+    $deleted = $this->asset->delete_attachment($id);
+    if ($deleted === TRUE) :
+      $this->session->set_flashdata('success','การลบไฟล์เสร็จสิ้น');
+    else:
+      $this->session->set_flashdata('danger','การลบไฟล์ขัดข้อง');
+    endif;
     redirect('admin/asset');
   }
 
